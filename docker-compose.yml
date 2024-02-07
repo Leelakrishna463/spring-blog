@@ -1,0 +1,29 @@
+version: "3.8"
+
+volumes:
+  blog_postgres_data: {}
+  blog_pgadmin_data: {}
+
+services:
+
+  postgresql:
+    image: postgres
+    restart: on-failure
+    volumes:
+      - blog_postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=Pass!123
+
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - "8888:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: abhishek.shandilya@decathlon.com
+      PGADMIN_DEFAULT_PASSWORD: Pass!123
+    volumes:
+      - blog_pgadmin_data:/var/lib/pgadmin
