@@ -1,4 +1,4 @@
-package models;
+package com.springblog.models;
 
 import jakarta.persistence.*;
 import lombok.Builder;
