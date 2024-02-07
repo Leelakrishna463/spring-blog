@@ -1,2 +1,12 @@
 server:
   port: 8000
+
+spring:
+  datasource:
+    password: Pass!123
+    url: jdbc:postgresql://localhost:5432/springblog
+    username: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
