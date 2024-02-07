@@ -1,8 +1,7 @@
 package com.springblog.models;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -10,7 +9,9 @@ import java.time.ZonedDateTime;
 
 @Data
 @Builder
-@Table(name = "article")
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class Article {
 
     @Id
